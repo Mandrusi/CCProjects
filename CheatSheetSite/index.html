@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+
+</head>
+<body>
+    <h1> CSS Specificity Cheatsheet</h1>
+    <h2>Specificity Tags</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Specifier</th>
+                <th>Example</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="code">Inline Style</span></td>
+                <td>&lt;h1 style="color: pink;"&gt;</td>
+                <td>highest spec. (other than !important) defined in the HTML itself</td>
+            </tr>
+            <tr>
+                <td><span class="code">element</span></td>
+                <td>p</td>
+                <td>Applies changes to all p or paragraph elements</td>
+
+            </tr>
+            <tr>
+                <td><span class="code">class</span></td>
+                <td>.test</td>
+                <td>Applies changes to all test class elements</td>
+
+            </tr>
+            <tr>
+                <td><span class="code">ID</span></td>
+                <td>#navbar</td>
+                <td>Applies changes to elements with the id navbar</td>
+            </tr>
+            <tr>
+                <td><span class="code">Subselector</span></td>
+                <td>.container h1</td>
+                <td>Applies changes to h1 elements of the container class</td>
+            </tr>
+            <tr>
+                <td><span class="code">Multiselector</span></td>
+                <td>h1, h2</td>
+                <td>Applies changes to all h1 and h2 elements</td>
+            </tr>
+            <tr>
+                <td><span class="code">Universal Selector</span></td>
+                <td>*</td>
+                <td>Applies changes to all elements</td>
+            </tr>
+            <tr>
+                <td><span class="code">Important Selector</span></td>
+                <td>!important</td>
+                <td>Overrides all other specificities</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Calculating Specificity</h2>
+    <table>
+        <thead>
+            <th>Selector</th>
+            <th>Value</th>
+            <th>Calculation</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&lt;p style="color: pink;"&gt;</td>
+                <td>1000</td>
+                <td>1000 for inline</td>
+            </tr>
+            <tr>
+                <td>p</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>p.test</td>
+                <td>11</td>
+                <td>1 + 10</td>
+            </tr>
+            <tr>
+                <td>p #demo</td>
+                <td>101</td>
+                <td>1 + 100</td>
+            </tr>
+            <tr>
+                <td>#demo</td>
+                <td>100</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>.test</td>
+                <td>10</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>p.test1.test2</td>
+                <td>21</td>
+                <td>1 + 10 + 10</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>0</td>
+                <td>0 (universal selector is ignored)</td>
+            </tr>
+            <tr></tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
